@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Titkov's Quiz Game</title>
+  <link rel="stylesheet" href="titkov_assignment_css.css" />
+</head>
+<body>
+
+  <div id="start-screen" class="screen active">
+    <h1>Titkov's Quiz Game</h1>
+
+    <div class="row-players">
+      <label for="num-players">Number of Players:</label>
+      <select id="num-players">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+      </select>
+    </div>
+
+    <div class="row-topic">
+      <label for="quiz-topic">Select Topic:</label>
+      <select id="quiz-topic">
+        <option value="html">HTML</option>
+        <option value="css">CSS</option>
+        <option value="js">JavaScript</option>
+        <option value="mixed">Mixed</option>
+      </select>
+
+      <label for="questions-per-player">Questions per Player:</label>
+      <select id="questions-per-player">
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+    </div>
+
+    <button id="go-to-names">Next</button>
+  </div>
+  
+  <div id="player-setup-screen" class="screen hidden">
+    <h2>Enter Player Names</h2>
+    <div id="player-inputs"></div>
+    <button id="back-to-start">Back</button>
+    <button id="confirm-players">Confirm Players</button>
+  </div>
+
+  <div id="countdown-screen" class="screen hidden">
+    <h2>Get Ready!</h2>
+    <p>The game will start in:</p>
+    <span id="countdown-timer">5</span>
+  </div>
+
+  <div id="quiz-screen" class="screen hidden">
+    <h2 id="player-turn">
+      <span id="current-player-name">Player 1</span>'s Turn
+    </h2>
+    <p id="question-text">Question will appear here</p>
+    <div id="answers"></div>
+    <p id="timer">
+      Time left: <span id="time-left">10</span> sec
+    </p>
+    <button id="submit-answer">Submit</button>
+  </div>
+
+  <div id="end-screen" class="screen hidden">
+    <h2>Game Over</h2>
+    <p id="winner-message"></p>
+    <button id="restart-game">Start a New Game</button>
+    <button id="review-answers">Review Answers</button>
+  </div>
+
+  <div id="review-screen" class="screen hidden">
+    <h2>Review Answers</h2>
+    <div id="answers-log"></div>
+    <button id="back-to-end">Back</button>
+  </div>
+
+  <script src="titkov_assignment_script.js"></script>
+</body>
+</html>
